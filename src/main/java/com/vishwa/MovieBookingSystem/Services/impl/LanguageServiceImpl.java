@@ -5,9 +5,11 @@ import com.vishwa.MovieBookingSystem.dao.LanguageDao;
 import com.vishwa.MovieBookingSystem.enteties.Language;
 import com.vishwa.MovieBookingSystem.exceptions.LanguageDetailsNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class LanguageServiceImpl implements LanguageService {
 
     @Autowired

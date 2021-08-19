@@ -5,9 +5,11 @@ import com.vishwa.MovieBookingSystem.dao.CityDao;
 import com.vishwa.MovieBookingSystem.enteties.City;
 import com.vishwa.MovieBookingSystem.exceptions.CityDetailsNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CityServiceImpl implements CityService {
 
     @Autowired

@@ -1,6 +1,7 @@
 package com.vishwa.MovieBookingSystem.enteties;
 
 import javax.persistence.*;
+
 @Entity
 public class MovieTheatre {
   @Id
