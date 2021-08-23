@@ -14,6 +14,8 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootTest
 public class MovieServiceImplUnitTest {
@@ -56,6 +58,9 @@ public void beforeTest(){
         * */
         Mockito.when(movieDao.save(movie)).thenReturn(movie);
         Mockito.when(movieDao.findById(1)).thenReturn(java.util.Optional.ofNullable(movie));
+        List<Movie> savedMovies = new ArrayList<>();
+        savedMovies.add(movie);
+        Mockito.when(movieDao.findAll()).thenReturn(savedMovies);
 }
 
 
@@ -73,10 +78,19 @@ public void beforeTest(){
         Assertions.assertNotNull(savedMovie);
     }
   //updateMovieDetails
-
+    @Test
+    public void testUpdateMovieDetails() throws MovieDetailNotFoundException {
+        Movie updatedMovie = movieService.updateMovieDetails(1,movie);
+        Assertions.assertNotNull(updatedMovie);
+    }
     //deleteMovie
 
-    //getAllMovieDetails
 
+    //getAllMovieDetails
+    @Test
+    public void testGetAllMovieDetails(){
+        List<Movie> movies = movieService.getAllMoviesDetails();
+        Assertions.assertNotEquals(0,movies.size());
+    }
 
 }
