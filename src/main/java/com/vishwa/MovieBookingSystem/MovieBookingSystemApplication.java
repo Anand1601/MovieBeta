@@ -35,6 +35,7 @@ public class  MovieBookingSystemApplication {
 	* this is the way to execute something in the very begining when application is starting up
 	* */
 
+/*
 	@Bean
 	CommandLineRunner init(InitService initService){
 		return args -> {
@@ -42,6 +43,7 @@ public class  MovieBookingSystemApplication {
 			initService.init();
 		};
 	}
+*/
 
 
 }

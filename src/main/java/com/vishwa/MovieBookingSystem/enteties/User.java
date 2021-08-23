@@ -51,7 +51,7 @@ public class User {
 private UserType userType;
 
 @ManyToOne
-@JoinColumn(name = "language_id",nullable = false)
+@JoinColumn(name = "language_id")
 private Language language;
 
     public Set<Booking> getBookings() {

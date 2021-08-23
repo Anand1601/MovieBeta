@@ -8,6 +8,7 @@ import com.vishwa.MovieBookingSystem.enteties.Booking;
 import com.vishwa.MovieBookingSystem.enteties.MovieTheatre;
 import com.vishwa.MovieBookingSystem.exceptions.BookingDetailsNotFoundException;
 import com.vishwa.MovieBookingSystem.exceptions.MoiveTheatreDetailsNotFoundException;
+import com.vishwa.MovieBookingSystem.exceptions.MovieTheatreDetailsNotFoundException;
 import com.vishwa.MovieBookingSystem.exceptions.UserDetailsNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,10 +17,6 @@ import java.util.List;
 
 @Service
 public class BookingServiceImpl implements BookingService {
-/*
-    @Autowired
-    public MovieTheatreService movieTheatreService;
-*/
 
     @Autowired
     public UserService userService;
@@ -27,25 +24,32 @@ public class BookingServiceImpl implements BookingService {
     @Autowired
     public BookingDao bookingDao;
 
-
+    @Autowired
+    public MovieTheatreService movieTheatreService;
 
     @Override
-    public Booking acceptBookingDetails(Booking booking) throws MoiveTheatreDetailsNotFoundException, UserDetailsNotFoundException {
-      return null;
+    public Booking acceptBookingDetails(Booking booking) throws UserDetailsNotFoundException, MovieTheatreDetailsNotFoundException {
+      movieTheatreService.getMovieTheatreDetails(booking.getMovieTheatre().getMovieTheatreId());
+      userService.getUserDetails(booking.getUser().getUserId());
+        return bookingDao.save(booking);
     }
 
     @Override
     public Booking getBookingDetails(int id) throws BookingDetailsNotFoundException {
-        return null;
+        return bookingDao.findById(id).orElseThrow(()->
+                new BookingDetailsNotFoundException("Booking not found for this id:"+id));
     }
 
     @Override
     public boolean deleteBooking(int id) throws BookingDetailsNotFoundException {
-        return false;
+        Booking booking = getBookingDetails(id);
+        bookingDao.delete(booking);
+        return true;
     }
 
     @Override
     public List<Booking> getAllBookingDetails() {
-        return null;
+        return bookingDao.findAll();
     }
+
 }

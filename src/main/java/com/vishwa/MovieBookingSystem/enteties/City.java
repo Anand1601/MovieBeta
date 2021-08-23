@@ -3,6 +3,7 @@ package com.vishwa.MovieBookingSystem.enteties;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -62,5 +63,18 @@ public class City {
                 ", cityName='" + cityName + '\'' +
                 ", theatre=" + theatre +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        City city = (City) o;
+        return Objects.equals(cityName, city.cityName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cityName);
     }
 }
