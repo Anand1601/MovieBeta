@@ -1,6 +1,6 @@
 package com.MovieBeta.MovieBookingSystem.Services.impl;
 
-import com.MovieBeta.MovieBookingSystem.dao.LanguageDao;
+import com.MovieBeta.MovieBookingSystem.daos.LanguageDao;
 import com.MovieBeta.MovieBookingSystem.enteties.Language;
 import com.MovieBeta.MovieBookingSystem.exceptions.LanguageDetailsNotFoundException;
 import com.MovieBeta.MovieBookingSystem.Services.LanguageService;

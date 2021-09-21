@@ -3,10 +3,9 @@ package com.MovieBeta.MovieBookingSystem.Services.impl;
 import com.MovieBeta.MovieBookingSystem.Services.MovieService;
 import com.MovieBeta.MovieBookingSystem.Services.MovieTheatreService;
 import com.MovieBeta.MovieBookingSystem.Services.TheatreService;
-import com.MovieBeta.MovieBookingSystem.dao.MovieTheatreDao;
+import com.MovieBeta.MovieBookingSystem.daos.MovieTheatreDao;
 import com.MovieBeta.MovieBookingSystem.enteties.MovieTheatre;
-import com.MovieBeta.MovieBookingSystem.exceptions.MoiveTheatreDetailsNotFoundException;
-import com.MovieBeta.MovieBookingSystem.exceptions.MovieDetailNotFoundException;
+import com.MovieBeta.MovieBookingSystem.exceptions.MovieDetailsNotFoundException;
 import com.MovieBeta.MovieBookingSystem.exceptions.MovieTheatreDetailsNotFoundException;
 import com.MovieBeta.MovieBookingSystem.exceptions.TheatreDetailsNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +28,8 @@ public class MovieTheatreServiceImpl implements MovieTheatreService {
 
 
     @Override
-    public MovieTheatre acceptMovieTheatreDetails(MovieTheatre movieTheatre) throws MovieDetailNotFoundException, MoiveTheatreDetailsNotFoundException, TheatreDetailsNotFoundException {
+    public MovieTheatre acceptMovieTheatreDetails(MovieTheatre movieTheatre)
+            throws MovieDetailsNotFoundException, TheatreDetailsNotFoundException {
         movieService.getMovieDetails(movieTheatre.getMovie().getMovieId());
       theatreService.getTheatreDetails(movieTheatre.getTheatre().getTheatreId());
         return movieTheatreDao.save(movieTheatre);

@@ -10,17 +10,16 @@ public class Theatre {
     @GeneratedValue
     private int theatreId;
 
-   @Column(length = 20, nullable = false, unique = true)
+    @Column(length = 20, nullable = false, unique = true)
     private String theatreName;
 
-   @Column(nullable = false)
-    private float ticketPrice=150.00f;
+    @Column(nullable = false)
+    private float ticketPrice = 150.00f;
 
-@ManyToOne
-@JoinColumn(name = "City_Id",nullable = false)
-@JsonManagedReference
-private City city;
-
+    @ManyToOne
+    @JoinColumn(name = "City_Id", nullable = false)
+    @JsonManagedReference
+    private City city;
 
 
     public City getCity() {
@@ -30,6 +29,7 @@ private City city;
     public void setCity(City city) {
         this.city = city;
     }
+
 
 
     public int getTheatreId() {

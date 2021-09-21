@@ -1,7 +1,7 @@
 package com.MovieBeta.MovieBookingSystem.Services.impl;
 
 import com.MovieBeta.MovieBookingSystem.Services.StatusService;
-import com.MovieBeta.MovieBookingSystem.dao.StatusDao;
+import com.MovieBeta.MovieBookingSystem.daos.StatusDao;
 import com.MovieBeta.MovieBookingSystem.enteties.Status;
 import com.MovieBeta.MovieBookingSystem.exceptions.StatusDetailsNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

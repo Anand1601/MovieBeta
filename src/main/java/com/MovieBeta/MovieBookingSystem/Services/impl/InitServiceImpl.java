@@ -1,7 +1,7 @@
 package com.MovieBeta.MovieBookingSystem.Services.impl;
 
 import com.MovieBeta.MovieBookingSystem.Services.*;
-import com.MovieBeta.MovieBookingSystem.dao.UserTypeDao;
+import com.MovieBeta.MovieBookingSystem.daos.UserTypeDao;
 import com.MovieBeta.MovieBookingSystem.enteties.*;
 import com.MovieBeta.MovieBookingSystem.exceptions.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,8 +56,7 @@ public class InitServiceImpl implements InitService {
 
              @Override
     public void init() throws UserTypeDetailsNotFoundException, UserNameAlreadyExistsException,
-                     MoiveTheatreDetailsNotFoundException, MovieDetailNotFoundException,
-                     TheatreDetailsNotFoundException, UserDetailsNotFoundException,
+                     MovieDetailsNotFoundException, TheatreDetailsNotFoundException, UserDetailsNotFoundException,
                      MovieTheatreDetailsNotFoundException {
         /*
         * write the logic to store data inside the database in different tables
@@ -106,7 +105,7 @@ public class InitServiceImpl implements InitService {
         languages.forEach(language ->languageService.acceptLanguageDetails(language) );
     }
 
-    private void addBooking() throws MoiveTheatreDetailsNotFoundException, UserDetailsNotFoundException, MovieTheatreDetailsNotFoundException {
+    private void addBooking() throws  UserDetailsNotFoundException, MovieTheatreDetailsNotFoundException {
         booking1.setBookingDate(LocalDateTime.of(2019, 1, 8, 0, 10));
         booking1.setUser(user1);
         booking1.setNoOfSeats(150);
@@ -114,7 +113,8 @@ public class InitServiceImpl implements InitService {
         bookingService.acceptBookingDetails(booking1);
     }
 
-    private void addMovieTheatre() throws MovieDetailNotFoundException, MoiveTheatreDetailsNotFoundException, TheatreDetailsNotFoundException {
+    private void addMovieTheatre() throws MovieDetailsNotFoundException,
+            TheatreDetailsNotFoundException {
         movieTheatre1.setMovie(movie1);
         movieTheatre1.setTheatre(theatre2);
         movieTheatreService.acceptMovieTheatreDetails(movieTheatre1);

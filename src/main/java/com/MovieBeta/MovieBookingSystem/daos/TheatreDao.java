@@ -1,4 +1,4 @@
-package com.MovieBeta.MovieBookingSystem.dao;
+package com.MovieBeta.MovieBookingSystem.daos;
 
 import com.MovieBeta.MovieBookingSystem.enteties.Theatre;
 import org.springframework.data.jpa.repository.JpaRepository;

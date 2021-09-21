@@ -3,7 +3,7 @@ package com.MovieBeta.MovieBookingSystem.Services.impl;
 import com.MovieBeta.MovieBookingSystem.Services.BookingService;
 import com.MovieBeta.MovieBookingSystem.Services.MovieTheatreService;
 import com.MovieBeta.MovieBookingSystem.Services.UserService;
-import com.MovieBeta.MovieBookingSystem.dao.BookingDao;
+import com.MovieBeta.MovieBookingSystem.daos.BookingDao;
 import com.MovieBeta.MovieBookingSystem.enteties.Booking;
 import com.MovieBeta.MovieBookingSystem.exceptions.BookingDetailsNotFoundException;
 import com.MovieBeta.MovieBookingSystem.exceptions.MovieTheatreDetailsNotFoundException;

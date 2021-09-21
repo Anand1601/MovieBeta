@@ -2,7 +2,7 @@ package com.MovieBeta.MovieBookingSystem.Services.impl;
 
 import com.MovieBeta.MovieBookingSystem.Services.UserService;
 import com.MovieBeta.MovieBookingSystem.Services.UserTypeService;
-import com.MovieBeta.MovieBookingSystem.dao.UserDao;
+import com.MovieBeta.MovieBookingSystem.daos.UserDao;
 import com.MovieBeta.MovieBookingSystem.enteties.User;
 import com.MovieBeta.MovieBookingSystem.exceptions.UserDetailsNotFoundException;
 import com.MovieBeta.MovieBookingSystem.exceptions.UserNameAlreadyExistsException;

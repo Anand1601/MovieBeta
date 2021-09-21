@@ -1,7 +1,7 @@
 package com.MovieBeta.MovieBookingSystem.Services.impl;
 
 import com.MovieBeta.MovieBookingSystem.Services.UserTypeService;
-import com.MovieBeta.MovieBookingSystem.dao.UserTypeDao;
+import com.MovieBeta.MovieBookingSystem.daos.UserTypeDao;
 import com.MovieBeta.MovieBookingSystem.enteties.UserType;
 import com.MovieBeta.MovieBookingSystem.exceptions.UserTypeDetailsNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

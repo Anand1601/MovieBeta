@@ -1,7 +1,7 @@
 package com.MovieBeta.MovieBookingSystem.Services.impl;
 
 import com.MovieBeta.MovieBookingSystem.Services.TheatreService;
-import com.MovieBeta.MovieBookingSystem.dao.TheatreDao;
+import com.MovieBeta.MovieBookingSystem.daos.TheatreDao;
 import com.MovieBeta.MovieBookingSystem.enteties.Theatre;
 import com.MovieBeta.MovieBookingSystem.exceptions.TheatreDetailsNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

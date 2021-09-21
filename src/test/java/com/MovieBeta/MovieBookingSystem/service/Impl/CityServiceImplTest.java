@@ -1,7 +1,7 @@
 package com.MovieBeta.MovieBookingSystem.service.Impl;
 
 import com.MovieBeta.MovieBookingSystem.Services.impl.CityServiceImpl;
-import com.MovieBeta.MovieBookingSystem.dao.CityDao;
+import com.MovieBeta.MovieBookingSystem.daos.CityDao;
 import com.MovieBeta.MovieBookingSystem.enteties.City;
 import com.MovieBeta.MovieBookingSystem.exceptions.CityDetailsNotFoundException;
 import org.junit.jupiter.api.Assertions;
