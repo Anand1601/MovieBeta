@@ -11,6 +11,8 @@ public class MovieDTO {
     private String movieName;
     @JsonProperty("movie_desc")
     private String movieDescription;
+
+
     private int duration;
     private LocalDateTime releaseDate;
     private String coverPhotoUrl;

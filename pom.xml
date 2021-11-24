@@ -63,11 +63,7 @@
     <version>2.3.5</version>
 </dependency>
 
-		<!-- dependency for spring-boot security -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+
 
 
 	</dependencies>

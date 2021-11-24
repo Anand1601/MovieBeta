@@ -9,13 +9,9 @@ import java.util.List;
 
 public interface MovieDao extends JpaRepository<Movie,Integer> {
 
-    //search based on the movie name
+
     public List<Movie> findByMovieName(String movieName);
-
-    //search based on movie name and duration
     public List<Movie> findByMovieNameAndDuration(String name,int duration);
-
-    //find movie greater than given hour
     List<Movie> findByReleaseDateBetween(LocalDateTime start,LocalDateTime end);
     public List<Movie> findByDurationGreaterThanEqual(int duration);
     List<Movie> findByReleaseDateAfter(LocalDateTime releaseDate);

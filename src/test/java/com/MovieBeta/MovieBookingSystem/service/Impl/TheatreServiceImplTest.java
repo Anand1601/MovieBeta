@@ -20,13 +20,13 @@ public class TheatreServiceImplTest {
     Theatre theatre;
 
 
-    @BeforeEach
+   /* @BeforeEach
     public void beforeTest() {
 
         theatre.setTheatreName("PVR");
         theatre.set
 
-    }
+    }*/
 
     //Test acceptTheatre
 

@@ -14,7 +14,6 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class  MovieBookingSystemApplication {
 
-	//for logging
 	 private static final Logger LOGGER = LoggerFactory.getLogger(MovieBookingSystemApplication.class);
 
 	public static void main(String[] args) {
@@ -22,7 +21,8 @@ public class  MovieBookingSystemApplication {
 
 		ApplicationContext ctx= SpringApplication.run(MovieBookingSystemApplication.class, args);
 
-		System.out.println("kyu");
+
+		System.out.println("hello spring");
 
 	}
 

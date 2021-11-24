@@ -58,17 +58,7 @@ public class InitServiceImpl implements InitService {
     public void init() throws UserTypeDetailsNotFoundException, UserNameAlreadyExistsException,
                      MovieDetailsNotFoundException, TheatreDetailsNotFoundException, UserDetailsNotFoundException,
                      MovieTheatreDetailsNotFoundException {
-        /*
-        * write the logic to store data inside the database in different tables
-        * */
-
-
-        /*
-        * add cities
-        * to do this you can use cityDao or acceptCityDetails both will do the same but it is better
-        * use cityService
-        * ## if use can do the task using service don't use dao in any layer except DAL ##
-        * */
+   //create city
         createCities();
 
         //add user types

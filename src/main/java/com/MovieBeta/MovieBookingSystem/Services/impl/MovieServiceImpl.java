@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Service
-public class MovieServiceImpl implements MovieService {
+public class  MovieServiceImpl implements MovieService {
 
     @Autowired
     private MovieDao movieDao;

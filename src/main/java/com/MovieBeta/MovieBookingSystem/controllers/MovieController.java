@@ -33,17 +33,6 @@ public class MovieController {
     @Autowired
     private StatusService statusService;
 
-    /*
-     *Greeting
-     *127.0.0.1.:8081/mbs/v1/movies/greetings
-     * */
-    @GetMapping("/greetings")
-    public ResponseEntity helloWorld() {
-
-
-        LOGGER.info("Inside the hello Wolrld Method");
-        return new ResponseEntity("Hello People", HttpStatus.OK);
-    }
 
     /*
      * Get all movies
@@ -56,7 +45,7 @@ public class MovieController {
         List<MovieDTO> movieDTOS = new ArrayList<>();
 
         for (Movie movie : movies) {
-            movieDTOS.add(movieService.convertToMovieDTO(movie));
+            movieDTOS.add(modelMapper.map(movie,MovieDTO.class));
         }
 
         return new ResponseEntity(movieDTOS, HttpStatus.OK);
@@ -70,8 +59,6 @@ public class MovieController {
     @GetMapping("/{Id}")
     public ResponseEntity getMovieBasedOnId(@PathVariable(name = "Id") int movieId) throws MovieDetailsNotFoundException {
         Movie movie = movieService.getMovieDetails(movieId);
-
-
         MovieDTO movieDTO = convertToMovieDTO(movie);
         return new ResponseEntity(movieDTO, HttpStatus.OK);
     }

@@ -22,18 +22,7 @@ public interface MovieService {
 
     List<Movie> getAllMoviesDetails();
 
-        default MovieDTO convertToMovieDTO(Movie movie){
-        MovieDTO movieDTO =new MovieDTO();
-        movieDTO.setMovieId(movie.getMovieId());
-        movieDTO.setMovieName(movie.getMovieName());
-        movieDTO.setMovieDescription(movie.getMovieDescription());
-        movieDTO.setDuration(movie.getDuration());
-        movieDTO.setReleaseDate(movie.getReleaseDate());
-        movieDTO.setCoverPhotoUrl(movie.getCoverPhotoUrl());
-        movieDTO.setStatus_id(movie.getStatus().getStatusId());
-        movieDTO.setTrailerUrl(movie.getTrailerUrl());
 
-        return movieDTO;
-    }
+
 
 }
