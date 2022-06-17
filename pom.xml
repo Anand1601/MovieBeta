@@ -39,7 +39,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- add thee dependency for jap-->
+		<!-- add thee dependency for jpa-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>

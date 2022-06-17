@@ -31,10 +31,9 @@ public class LanguageServiceImpl implements LanguageService {
     }
 
     @Override
-    public boolean deleteLanguage(int id) throws LanguageDetailsNotFoundException {
+    public void deleteLanguage(int id) throws LanguageDetailsNotFoundException {
         Language savedLanguage=getLanguageDetails(id);
         languageDao.delete(savedLanguage);
-    return true;
     }
 
     @Override

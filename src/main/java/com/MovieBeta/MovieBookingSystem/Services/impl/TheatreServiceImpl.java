@@ -43,10 +43,9 @@ return theatreDao.findById(id).orElseThrow(()->new TheatreDetailsNotFoundExcepti
     }
 
     @Override
-    public boolean deleteTheatre(int id) throws TheatreDetailsNotFoundException {
+    public void deleteTheatre(int id) throws TheatreDetailsNotFoundException {
         Theatre savedTheatre=getTheatreDetails(id);
         theatreDao.delete(savedTheatre);
-        return true;
     }
 
     @Override

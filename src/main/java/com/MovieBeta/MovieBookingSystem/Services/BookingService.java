@@ -13,6 +13,6 @@ public interface BookingService {
             throws MovieTheatreDetailsNotFoundException,
             UserDetailsNotFoundException, MovieTheatreDetailsNotFoundException;
     public Booking getBookingDetails(int id) throws BookingDetailsNotFoundException;
-    public boolean deleteBooking(int id) throws BookingDetailsNotFoundException;
+    public void deleteBooking(int id) throws BookingDetailsNotFoundException;
     public List<Booking> getAllBookingDetails();
 }

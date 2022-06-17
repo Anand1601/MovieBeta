@@ -51,10 +51,10 @@ return savedCity;
     }
 
     @Override
-    public boolean deleteCity(int id) throws CityDetailsNotFoundException {
-        City SavedCity=getCityDetails(id);
-        cityDao.delete(SavedCity);
-        return true;
+    public void deleteCity(int id) throws CityDetailsNotFoundException {
+        City savedCity=getCityDetails(id);
+cityDao.delete(savedCity);
+
     }
 
     @Override

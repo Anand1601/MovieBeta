@@ -15,7 +15,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,9 +42,10 @@ public class MovieController {
         List<Movie> movies = movieService.getAllMoviesDetails();
 
         List<MovieDTO> movieDTOS = new ArrayList<>();
-
         for (Movie movie : movies) {
-            movieDTOS.add(modelMapper.map(movie,MovieDTO.class));
+            MovieDTO movieDTO = modelMapper.map(movie,MovieDTO.class);
+            movieDTO.setStatus_id(movie.getStatus().getStatusId());
+            movieDTOS.add(movieDTO);
         }
 
         return new ResponseEntity(movieDTOS, HttpStatus.OK);
@@ -60,6 +60,7 @@ public class MovieController {
     public ResponseEntity getMovieBasedOnId(@PathVariable(name = "Id") int movieId) throws MovieDetailsNotFoundException {
         Movie movie = movieService.getMovieDetails(movieId);
         MovieDTO movieDTO = convertToMovieDTO(movie);
+        movieDTO.setStatus_id(movie.getStatus().getStatusId());
         return new ResponseEntity(movieDTO, HttpStatus.OK);
     }
 
@@ -75,6 +76,7 @@ public class MovieController {
         movie.setStatus(status);
         Movie savedMovie = movieService.acceptMovieDetails(movie);
         MovieDTO responseBody = modelMapper.map(savedMovie, MovieDTO.class);
+        responseBody.setStatus_id(savedMovie.getStatus().getStatusId());
         return new ResponseEntity(responseBody, HttpStatus.CREATED);
     }
 
@@ -90,9 +92,9 @@ public class MovieController {
 
         Movie movieTOBeUpdated = modelMapper.map(movieDTO, Movie.class);
         Movie savedMovie = movieService.updateMovieDetails(movieId, movieTOBeUpdated);
-
-        return new ResponseEntity(modelMapper.map(savedMovie, MovieDTO.class), HttpStatus.ACCEPTED);
-
+        MovieDTO responseMovie = modelMapper.map(savedMovie, MovieDTO.class);
+        responseMovie.setStatus_id(savedMovie.getStatus().getStatusId());
+        return new ResponseEntity(responseMovie, HttpStatus.ACCEPTED);
 
     }
 
@@ -106,10 +108,8 @@ public class MovieController {
         return new ResponseEntity("DELETED", HttpStatus.OK);
     }
 
-
     private MovieDTO convertToMovieDTO(Movie movie) {
         return modelMapper.map(movie, MovieDTO.class);
-
     }
 
 

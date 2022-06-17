@@ -34,10 +34,9 @@ if(status== null) {
     }
 
     @Override
-    public boolean deleteStatus(int id) throws StatusDetailsNotFoundException {
+    public void deleteStatus(int id) throws StatusDetailsNotFoundException {
         Status status=getStatusDetails(id);
         statusDao.delete(status);
-        return true;
     }
 
     @Override

@@ -16,5 +16,5 @@ public interface UserService {
     public User getUserDetailsByUserName(String username)throws UserDetailsNotFoundException;
 
     public User updateUserDetails(int id ,User user)throws UserDetailsNotFoundException,UserNameAlreadyExistsException,UserTypeDetailsNotFoundException;
-
+    public void deleteUser(int id) throws UserDetailsNotFoundException;
 }

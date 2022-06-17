@@ -12,7 +12,7 @@ public interface CityService {
     public City updateCityDetails(int id, City city) throws CityDetailsNotFoundException;
     public City getCityDetails(int id) throws CityDetailsNotFoundException;
     public City getCityDetailsByCityName(String cityName) throws CityDetailsNotFoundException;
-    public boolean deleteCity(int id) throws CityDetailsNotFoundException;
+    public void deleteCity(int id) throws CityDetailsNotFoundException;
     public List<City> getAllCityDetails();
 
 }

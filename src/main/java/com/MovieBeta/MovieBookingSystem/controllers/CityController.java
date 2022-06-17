@@ -1,8 +1,6 @@
 package com.MovieBeta.MovieBookingSystem.controllers;
 
-import ch.qos.logback.core.util.COWArrayList;
 import com.MovieBeta.MovieBookingSystem.Services.CityService;
-import com.MovieBeta.MovieBookingSystem.Services.impl.CityServiceImpl;
 import com.MovieBeta.MovieBookingSystem.dtos.CityDTO;
 import com.MovieBeta.MovieBookingSystem.enteties.City;
 import com.MovieBeta.MovieBookingSystem.exceptions.CityDetailsNotFoundException;
@@ -87,9 +85,6 @@ public ResponseEntity acceptMultipleCityDetails(@RequestBody List<CityDTO> cityD
    }
 
 
-    //public City getCityDetailsByCityName(String cityName) throws CityDetailsNotFoundException;
-
-
     /*
     * delete a city by given id
     * DELETE 127.0.0.1.:8081/mbs/v1/cities/{city_id}
@@ -100,14 +95,21 @@ public ResponseEntity acceptMultipleCityDetails(@RequestBody List<CityDTO> cityD
         return new ResponseEntity("DELETED",HttpStatus.OK);
     }
     
-    //public List<City> getAllCityDetails();
+
   /*
     * get all cities
     * Get 127.0.0.1.:8081/mbs/v1/cities
     * */
     @GetMapping
     public ResponseEntity getAllCity(){
-        List<City> response = cityService.getAllCityDetails();
+        List<City> cities = cityService.getAllCityDetails();
+        List<CityDTO> response = new ArrayList<>();
+
+        for(City city:cities) {
+           CityDTO cityDTO = modelMapper.map(city,CityDTO.class);
+           response.add(cityDTO);
+
+        }
         return new ResponseEntity(response,HttpStatus.OK);
     }
 

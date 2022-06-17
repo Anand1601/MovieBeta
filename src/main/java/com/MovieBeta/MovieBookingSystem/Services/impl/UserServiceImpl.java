@@ -86,6 +86,12 @@ if(isNotNullOrZero(user.getUserName()))
         return userDao.save(savedUser);
     }
 
+    @Override
+    public void deleteUser(int id) throws UserDetailsNotFoundException {
+        User savedUser = getUserDetails(id);
+        userDao.delete(savedUser);
+    }
+
     boolean isNotNullOrZero(Object obj)
     {
         return obj!=null;

@@ -39,10 +39,9 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public boolean deleteBooking(int id) throws BookingDetailsNotFoundException {
+    public void deleteBooking(int id) throws BookingDetailsNotFoundException {
         Booking booking = getBookingDetails(id);
         bookingDao.delete(booking);
-        return true;
     }
 
     @Override

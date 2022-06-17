@@ -11,6 +11,6 @@ public interface MovieTheatreService {
     public MovieTheatre acceptMovieTheatreDetails(MovieTheatre movieTheatre)
             throws MovieDetailsNotFoundException,  TheatreDetailsNotFoundException;
     public  MovieTheatre getMovieTheatreDetails(int id) throws MovieTheatreDetailsNotFoundException;
-    public boolean deleteMovieTheatre(int id) throws  MovieTheatreDetailsNotFoundException;
+    public void deleteMovieTheatre(int id) throws  MovieTheatreDetailsNotFoundException;
     public List<MovieTheatre> getMovieTheatreDetails();
 }

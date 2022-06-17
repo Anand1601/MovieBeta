@@ -30,10 +30,9 @@ public class UserTypeServiceImpl implements UserTypeService {
     }
 
     @Override
-    public boolean deleteUserType(int id) throws UserTypeDetailsNotFoundException {
+    public void deleteUserType(int id) throws UserTypeDetailsNotFoundException {
         UserType userType=getUserTypeDetails(id);
         userTypeDao.delete(userType);
-        return true;
     }
 
     @Override

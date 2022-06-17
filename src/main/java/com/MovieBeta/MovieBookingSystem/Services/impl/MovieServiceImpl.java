@@ -67,10 +67,9 @@ public class  MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public boolean deleteMovie(int id) throws MovieDetailsNotFoundException {
+    public void deleteMovie(int id) throws MovieDetailsNotFoundException {
         Movie savedMovie = getMovieDetails(id);
         movieDao.delete(savedMovie);
-        return true;
     }
 
     @Override

@@ -1,8 +1,6 @@
 package com.MovieBeta.MovieBookingSystem.Services;
 
 
-
-import com.MovieBeta.MovieBookingSystem.dtos.MovieDTO;
 import com.MovieBeta.MovieBookingSystem.enteties.Movie;
 import com.MovieBeta.MovieBookingSystem.exceptions.MovieDetailsNotFoundException;
 
@@ -18,7 +16,7 @@ public interface MovieService {
 
     Movie updateMovieDetails(int id,Movie movie) throws MovieDetailsNotFoundException;
 
-    boolean deleteMovie(int id)throws MovieDetailsNotFoundException;
+    void deleteMovie(int id)throws MovieDetailsNotFoundException;
 
     List<Movie> getAllMoviesDetails();
 

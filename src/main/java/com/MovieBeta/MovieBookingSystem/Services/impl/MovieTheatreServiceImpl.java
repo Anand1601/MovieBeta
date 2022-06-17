@@ -41,10 +41,9 @@ public class MovieTheatreServiceImpl implements MovieTheatreService {
     }
 
     @Override
-    public boolean deleteMovieTheatre(int id) throws MovieTheatreDetailsNotFoundException {
+    public void deleteMovieTheatre(int id) throws MovieTheatreDetailsNotFoundException {
         MovieTheatre savedMovieTheatre=getMovieTheatreDetails(id);
         movieTheatreDao.delete(savedMovieTheatre);
-    return true;
     }
 
     @Override
